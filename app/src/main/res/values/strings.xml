@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">CoronaInformation</string>
+    <string name="local_details">Local Details</string>
+    <string name="new_cases">New Cases</string>
+    <string name="total_cases">Total Details</string>
+    <string name="deaths">Deaths</string>
+    <string name="new_deaths">New Deaths</string>
+    <string name="tot_ind_in_hospitals">Total individuals in hospitals</string>
+    <string name="active_cases">Active Cases</string>
+    <string name="total_recovered">Total Recovered</string>
+
+    <string name="global_details">Global Details</string>
+    <string name="source">Source : https://www.hpb.health.gov.lk/ </string>
+    <string name="developer">Mihindu Wijesena - 2021</string>
+    <string name="version">Version</string>
+    <string name="updatedAt">Updated At : </string>
 </resources>
