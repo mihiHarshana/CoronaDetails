@@ -16,14 +16,10 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
-import org.w3c.dom.Text;
-
 import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
-
-
-    String URL = "https://www.hpb.health.gov.lk/api/get-current-statistical";
+    String  URL = "https://www.hpb.health.gov.lk/api/get-current-statistical";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,9 +55,6 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
-
-
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URL, null,
                 new Response.Listener<JSONObject>() {
@@ -73,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                             try {
                               //  JSONArray jsonArray   = response.getJSONArray("data");
                                 JSONObject jsonObject = response.getJSONObject("data");
-                                Toast.makeText(getApplicationContext(),jsonObject.getString("local_new_cases"),Toast.LENGTH_LONG).show();
+                             //   Toast.makeText(getApplicationContext(),jsonObject.getString("local_new_cases"),Toast.LENGTH_LONG).show();
                                 lblNewCases.setText(formatNumber(jsonObject.getString("local_new_cases")));
                                 lblTotalCases.setText(formatNumber(jsonObject.getString("local_total_cases")));
                                 lblTotalDeaths.setText(formatNumber(jsonObject.getString("local_deaths")));
@@ -90,11 +83,9 @@ public class MainActivity extends AppCompatActivity {
 
 
                             } catch (Exception e) {
+                                Toast.makeText(getApplicationContext(),"Somehing went wrong " + e, Toast.LENGTH_LONG).show();
                                 e.printStackTrace();
                             }
-
-
-
                         }
                     }
                 }, new Response.ErrorListener() {
@@ -102,14 +93,9 @@ public class MainActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_LONG).show();
             }
-        }
-
-        );
+        });
 
         requestQueue.add(jsonObjectRequest);
-
-
-
     }
 
     private String formatNumber(String value) {

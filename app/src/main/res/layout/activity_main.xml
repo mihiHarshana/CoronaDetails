@@ -142,7 +142,7 @@
                 android:id="@+id/lblNewCases"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="64dp"
+                android:layout_marginStart="36dp"
                 android:layout_marginTop="8dp"
                 android:inputType="none"
                 android:text="lblNewCases"
@@ -162,6 +162,8 @@
                 android:textColor="@color/green"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.978"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -169,12 +171,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="80dp"
+                android:layout_marginEnd="100dp"
                 android:inputType="none"
                 android:text="@string/total_cases"
                 android:textColor="@color/green"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.978"
+                app:layout_constraintStart_toEndOf="@+id/lblNewCases"
                 app:layout_constraintTop_toBottomOf="@+id/lblNewCases2" />
 
             <TextView
