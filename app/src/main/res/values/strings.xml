@@ -2,7 +2,7 @@
     <string name="app_name">CoronaInformation</string>
     <string name="local_details">Local Details</string>
     <string name="new_cases">New Cases</string>
-    <string name="total_cases">Total Details</string>
+    <string name="total_cases">Total Cases</string>
     <string name="deaths">Deaths</string>
     <string name="new_deaths">New Deaths</string>
     <string name="tot_ind_in_hospitals">Total individuals in hospitals</string>

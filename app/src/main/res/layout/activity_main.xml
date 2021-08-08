@@ -22,12 +22,13 @@
 
             <TextView
                 android:id="@+id/lblUpdatedAt"
-                android:layout_width="287dp"
-                android:layout_height="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
                 android:layout_marginStart="164dp"
                 android:layout_marginEnd="164dp"
                 android:text="@string/updatedAt"
                 android:textColor="@color/black"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -53,8 +54,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="132dp"
                 android:layout_marginTop="12dp"
+                android:layout_marginEnd="132dp"
+                android:autoLink="web"
                 android:text="@string/source"
+                android:textColorLink="#3F51B5"
                 android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,9 +68,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="164dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="163dp"
                 android:text="@string/developer"
                 android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lblSource" />
 
@@ -74,9 +81,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="200dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="199dp"
+                android:layout_marginBottom="8dp"
                 android:text="@string/version"
                 android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lblDeveloper" />
 
@@ -103,12 +114,15 @@
                 android:id="@+id/textView15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@color/heading_background"
 
+                android:layout_marginTop="7dp"
+                android:background="@color/heading_background"
                 android:text="@string/local_details"
+                android:textAlignment="center"
                 android:textColor="@color/white"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -120,6 +134,7 @@
                 android:inputType="none"
                 android:text="@string/new_cases"
                 android:textColor="@color/green"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -132,7 +147,7 @@
                 android:inputType="none"
                 android:text="lblNewCases"
                 android:textColor="@color/green"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -145,6 +160,7 @@
                 android:inputType="none"
                 android:text="@string/total_cases"
                 android:textColor="@color/green"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -155,9 +171,9 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="80dp"
                 android:inputType="none"
-                android:text="lblTotalCases"
+                android:text="@string/total_cases"
                 android:textColor="@color/green"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lblNewCases2" />
 
@@ -165,11 +181,12 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="92dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="12dp"
                 android:inputType="none"
                 android:text="@string/deaths"
                 android:textColor="@color/red"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lblNewCases" />
 
@@ -178,10 +195,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="92dp"
+                android:layout_marginEnd="80dp"
                 android:inputType="none"
                 android:text="@string/new_deaths"
                 android:textColor="@color/red"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lblTotalCases" />
 
@@ -190,24 +208,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="92dp"
+                android:layout_marginEnd="68dp"
                 android:inputType="none"
                 android:text="lblNewDeaths"
                 android:textColor="@color/red"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lblNewCases5" />
 
             <TextView
                 android:id="@+id/lblTotalDeaths"
-                android:layout_width="91dp"
-                android:layout_height="16dp"
-                android:layout_marginStart="64dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="104dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="72dp"
+                android:layout_marginTop="4dp"
                 android:inputType="none"
                 android:text="lblTotalDeaths"
                 android:textColor="@color/red"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -217,9 +235,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="109dp"
                 android:layout_marginTop="128dp"
+                android:layout_marginEnd="109dp"
                 android:inputType="none"
                 android:text="@string/tot_ind_in_hospitals"
                 android:textColor="@color/orange"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
@@ -227,12 +248,14 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="118dp"
+                android:layout_marginStart="60dp"
                 android:layout_marginTop="1dp"
+                android:layout_marginEnd="60dp"
                 android:inputType="none"
                 android:text="Total Individuals in hospital"
                 android:textColor="@color/orange"
-                android:textSize="16sp"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lblTotalInvInHospitals" />
 
@@ -240,11 +263,14 @@
                 android:id="@+id/lblActiveCases"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="83dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
                 android:inputType="none"
                 android:text="lblActiveCases"
                 android:textColor="@color/blue"
-                android:textSize="16sp"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -257,6 +283,7 @@
                 android:inputType="none"
                 android:text="@string/total_recovered"
                 android:textColor="@color/green"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -264,11 +291,12 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="95dp"
+                android:layout_marginStart="76dp"
                 android:layout_marginTop="1dp"
                 android:inputType="none"
                 android:text="@string/active_cases"
                 android:textColor="@color/blue"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -277,10 +305,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="71dp"
+                android:layout_marginBottom="4dp"
                 android:inputType="none"
                 android:text="lblTotalRecovered"
                 android:textColor="@color/green"
-                android:textSize="16sp"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -309,6 +339,7 @@
                 android:inputType="none"
                 android:text="@string/new_deaths"
                 android:textColor="@color/red"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lblGTotRecovered" />
 
@@ -321,7 +352,7 @@
 
                 android:text="lblGDeaths"
                 android:textColor="@color/red"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
@@ -334,6 +365,7 @@
                 android:inputType="none"
                 android:text="@string/total_cases"
                 android:textColor="@color/red"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lblGNewCases" />
 
@@ -345,7 +377,7 @@
                 android:inputType="none"
                 android:text="lblGTotCases"
                 android:textColor="@color/red"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
@@ -358,6 +390,7 @@
                 android:inputType="none"
                 android:text="@string/new_cases"
                 android:textColor="@color/green"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -369,7 +402,7 @@
                 android:inputType="none"
                 android:text="lblGNewCases"
                 android:textColor="@color/green"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -383,7 +416,8 @@
                 android:text="@string/total_recovered"
                 android:textColor="@color/green"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView14" />
+                app:layout_constraintTop_toBottomOf="@+id/textView14"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/lblGTotRecovered"
@@ -393,7 +427,7 @@
                 android:inputType="none"
                 android:text="lblGTotalRecovered"
                 android:textColor="@color/green"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -404,7 +438,9 @@
                 android:layout_marginTop="7dp"
                 android:background="@color/heading_background"
                 android:text="@string/global_details"
+                android:textAlignment="center"
                 android:textColor="@color/white"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
