@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,12 +46,22 @@ public class MainActivity extends AppCompatActivity {
         final TextView lblDeveloper = (TextView) findViewById(R.id.lblDeveloper);
         final TextView lblSource = (TextView)  findViewById(R.id.lblSource);
 
+        final Button btnClose = (Button) findViewById(R.id.btnClose);
+
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                System.exit(0);
+            }
+        });
+
         try {
             PackageInfo pInfo = this.getPackageManager().getPackageInfo(this.getPackageName(), 0);
 
-            lblVersion.setText("Corona Information : " + pInfo.versionName);
-            lblDeveloper.setText("Developer :  Mihindu Wijesena" );
-            lblSource.setText("Source : https://www.hpb.health.gov.lk");
+            lblVersion.setText(getResources().getString(R.string.app_name) + ": " + pInfo.versionName);
+            lblDeveloper.setText(getResources().getString(R.string.developer));
+            lblSource.setText(getResources().getString(R.string.source));
 
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
@@ -79,11 +91,11 @@ public class MainActivity extends AppCompatActivity {
                                 lblGTotalRecovered.setText(formatNumber(jsonObject.getString("global_recovered")));
                                 lblGNewCases.setText(formatNumber(jsonObject.getString("global_new_cases")));
                                 lblGTotCases.setText(formatNumber(jsonObject.getString("global_total_cases")));
-                                lblUpdatedAt.setText("Updated At : " + jsonObject.getString("update_date_time"));
+                                lblUpdatedAt.setText(getResources().getString(R.string.updatedAt) + jsonObject.getString("update_date_time"));
 
 
                             } catch (Exception e) {
-                                Toast.makeText(getApplicationContext(),"Somehing went wrong " + e, Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(),getResources().getString(R.string.somethingwentwrong) + e, Toast.LENGTH_LONG).show();
                                 e.printStackTrace();
                             }
                         }
