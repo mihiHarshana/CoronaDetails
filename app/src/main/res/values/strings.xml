@@ -11,7 +11,12 @@
 
     <string name="global_details">Global Details</string>
     <string name="source">Source : https://www.hpb.health.gov.lk/ </string>
-    <string name="developer">Mihindu Wijesena - 2021</string>
+    <string name="developer">Developer : Mihindu Wijesena - 2021</string>
     <string name="version">Version</string>
     <string name="updatedAt">Updated At : </string>
+
+    <string name="somethingwentwrong">Some thing went wrong </string>
+
+    <string name="btnClose">Close</string>
+
 </resources>
