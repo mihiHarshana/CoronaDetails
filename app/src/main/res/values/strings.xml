@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CoronaInformation</string>
+    <string name="app_name">Corona Information</string>
     <string name="local_details">Local Details</string>
     <string name="new_cases">New Cases</string>
     <string name="total_cases">Total Cases</string>
