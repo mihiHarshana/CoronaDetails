@@ -51,18 +51,20 @@
 
             <TextView
                 android:id="@+id/lblSource"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="219dp"
+                android:layout_height="21dp"
                 android:layout_marginStart="132dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="132dp"
                 android:autoLink="web"
+                android:minHeight="48dp"
                 android:text="@string/source"
                 android:textColorLink="#3F51B5"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <TextView
                 android:id="@+id/lblDeveloper"
@@ -163,7 +165,7 @@
                 android:layout_marginTop="36dp"
                 android:inputType="none"
                 android:text="@string/total_cases"
-                android:textColor="@color/green"
+                android:textColor="#1B5E20"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.978"
@@ -491,7 +493,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/btnClose"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -503,9 +507,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="186dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/btnRefresh"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnClose"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView4" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

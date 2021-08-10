@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         final Button btnClose = (Button) findViewById(R.id.btnClose);
         final Button btnRefresh = (Button) findViewById(R.id.btnRefresh);
+
 
 
 
@@ -89,7 +91,9 @@ public class MainActivity extends AppCompatActivity {
         final TextView lblGTotCases = (TextView) findViewById(R.id.lblGTotCases);
         final TextView lblUpdatedAt = (TextView) findViewById(R.id.lblUpdatedAt);
 
+      //  final ProgressBar pgsBar = (ProgressBar)findViewById(R.id.pBar);
 
+     //   pgsBar.setVisibility(View.VISIBLE);
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URL, null,
                 new Response.Listener<JSONObject>() {
@@ -121,6 +125,8 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(),getResources().getString(R.string.somethingwentwrong) + e, Toast.LENGTH_LONG).show();
                                 e.printStackTrace();
                             }
+
+                        //    pgsBar.setVisibility(View.GONE);
                         }
                     }
                 }, new Response.ErrorListener() {
