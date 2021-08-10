@@ -27,7 +27,53 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final TextView lblVersion = (TextView) findViewById(R.id.lblVersion);
+        final TextView lblDeveloper = (TextView) findViewById(R.id.lblDeveloper);
+        final TextView lblSource = (TextView)  findViewById(R.id.lblSource);
 
+        final Button btnClose = (Button) findViewById(R.id.btnClose);
+        final Button btnRefresh = (Button) findViewById(R.id.btnRefresh);
+
+
+
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                System.exit(0);
+            }
+        });
+
+        btnRefresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"Data Refreshed" , Toast.LENGTH_LONG).show();
+                loadData();
+            }
+        });
+
+        try {
+            PackageInfo pInfo = this.getPackageManager().getPackageInfo(this.getPackageName(), 0);
+
+            lblVersion.setText(getResources().getString(R.string.app_name) + ": " + pInfo.versionName);
+            lblDeveloper.setText(getResources().getString(R.string.developer));
+            lblSource.setText(getResources().getString(R.string.source));
+
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        loadData();
+
+    }
+
+    private String formatNumber(String value) {
+        String strTemp;
+        int temp = Integer.parseInt(value);
+        strTemp = NumberFormat.getInstance().format(temp);
+        return strTemp;
+    }
+
+    private void loadData () {
         final TextView  lblNewCases = (TextView) findViewById(R.id.lblNewCases);
         final TextView lblTotalCases = (TextView)findViewById(R.id.lblTotalCases);
         final TextView lblTotalDeaths = (TextView) findViewById(R.id.lblTotalDeaths);
@@ -42,43 +88,20 @@ public class MainActivity extends AppCompatActivity {
         final TextView lblGNewCases = (TextView) findViewById(R.id.lblGNewCases);
         final TextView lblGTotCases = (TextView) findViewById(R.id.lblGTotCases);
         final TextView lblUpdatedAt = (TextView) findViewById(R.id.lblUpdatedAt);
-        final TextView lblVersion = (TextView) findViewById(R.id.lblVersion);
-        final TextView lblDeveloper = (TextView) findViewById(R.id.lblDeveloper);
-        final TextView lblSource = (TextView)  findViewById(R.id.lblSource);
 
-        final Button btnClose = (Button) findViewById(R.id.btnClose);
-
-        btnClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-                System.exit(0);
-            }
-        });
-
-        try {
-            PackageInfo pInfo = this.getPackageManager().getPackageInfo(this.getPackageName(), 0);
-
-            lblVersion.setText(getResources().getString(R.string.app_name) + ": " + pInfo.versionName);
-            lblDeveloper.setText(getResources().getString(R.string.developer));
-            lblSource.setText(getResources().getString(R.string.source));
-
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URL, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                      //  Toast.makeText(getApplicationContext(),response.toString(),Toast.LENGTH_SHORT).show();
+                        //  Toast.makeText(getApplicationContext(),response.toString(),Toast.LENGTH_SHORT).show();
 
                         if (response != null) {
                             try {
-                              //  JSONArray jsonArray   = response.getJSONArray("data");
+                                //  JSONArray jsonArray   = response.getJSONArray("data");
                                 JSONObject jsonObject = response.getJSONObject("data");
-                             //   Toast.makeText(getApplicationContext(),jsonObject.getString("local_new_cases"),Toast.LENGTH_LONG).show();
+                                //   Toast.makeText(getApplicationContext(),jsonObject.getString("local_new_cases"),Toast.LENGTH_LONG).show();
                                 lblNewCases.setText(formatNumber(jsonObject.getString("local_new_cases")));
                                 lblTotalCases.setText(formatNumber(jsonObject.getString("local_total_cases")));
                                 lblTotalDeaths.setText(formatNumber(jsonObject.getString("local_deaths")));
@@ -108,12 +131,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         requestQueue.add(jsonObjectRequest);
-    }
 
-    private String formatNumber(String value) {
-        String strTemp;
-        int temp = Integer.parseInt(value);
-        strTemp = NumberFormat.getInstance().format(temp);
-        return strTemp;
     }
 }
